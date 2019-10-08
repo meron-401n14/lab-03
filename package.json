@@ -1,0 +1,23 @@
+{
+  "name": "file-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
+  },
+  "author": "Meron",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "fake": "^0.2.2",
+    "fs": "0.0.1-security",
+    "init": "^0.1.2",
+    "jest": "^24.9.0"
+  }
+}

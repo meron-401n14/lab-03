@@ -1,2 +1,32 @@
-# lab-03
-callback, promise and async
+# LAB - 03
+
+## Async
+
+### Author: Meron
+
+### Links and Resources
+* [submission PR](http://xyz.com)
+* [travis](http://xyz.com)
+
+
+#### Documentation
+* [jsdoc](http://xyz.com) (Server assignments)
+
+
+### Modules
+#### ``
+##### Exported Values and Methods
+
+#### Running the app
+* `npm start`
+
+  
+#### Tests
+* npm test
+* What assertions were made? *
+* What assertions need to be / should be made?
+
+#### UML
+* ![lab-03](Lab03UML.jpg
+)
+
