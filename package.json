@@ -1,7 +1,7 @@
 {
   "name": "file-reader",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Async",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -19,5 +19,14 @@
     "fs": "0.0.1-security",
     "init": "^0.1.2",
     "jest": "^24.9.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meron-401n14/lab-03.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meron-401n14/lab-03/issues"
+  },
+  "homepage": "https://github.com/meron-401n14/lab-03#readme"
 }

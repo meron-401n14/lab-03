@@ -1,21 +1,24 @@
-"use strict";
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+'use strict';
 
 module.exports = exports = {};
-let fileContents = '';
+let Contents = {};
 
-fs.readFile = (file, cb) => {
-	if (file.match(/bad/i)) {
-		cb("Invalid File");
-	} else {
-		cb(undefined, new Buffer("File Contents"));
-	}
+exports.readFile = (file, cb) => {
+  if (file.match(/bad/i)) {
+    cb('Invalid File');
+  } else {
+    cb(undefined, new Buffer('File Contents'));
+  }
 };
 
 exports.writeFile = (file, buffer, cb)=> {
-	if(file.match(/bad/i)){
-		cb('Invalid File');
-	} else {
-		fileContents = buffer;
-		cb(undefind, true);
-	}
-}
+  if(file.match(/bad/i)){
+    cb('Invalid File');
+  } else {
+    fileContents = buffer;
+    // eslint-disable-next-line no-undef
+    cb(undefind, true);
+  }
+};
