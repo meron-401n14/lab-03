@@ -10,15 +10,17 @@
 
 
 #### Documentation
-* [jsdoc](http://xyz.com) (Server assignments)
+* [jsdoc]
 
 
 ### Modules
-#### ``
+#### file-promise.js; file-Async.js; files-callBack.js
 ##### Exported Values and Methods
+ * fs.readFile 
+ * fs.writeFile
 
 #### Running the app
-* `npm start`
+* node index.js ./data/person.json
 
   
 #### Tests
@@ -27,6 +29,6 @@
 * What assertions need to be / should be made?
 
 #### UML
-* ![lab-03](Lab03UML.jpg
-)
+* ![lab-03](async.jpg)
+
 

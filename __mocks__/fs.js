@@ -9,7 +9,7 @@ exports.readFile = (file, cb) => {
   if (file.match(/bad/i)) {
     cb('Invalid File');
   } else {
-    cb(undefined, new Buffer('File Contents'));
+    cb(undefind, new Buffer('File Contents'));
   }
 };
 
@@ -17,7 +17,7 @@ exports.writeFile = (file, buffer, cb)=> {
   if(file.match(/bad/i)){
     cb('Invalid File');
   } else {
-    fileContents = buffer;
+    let  fileContents = buffer;
     // eslint-disable-next-line no-undef
     cb(undefind, true);
   }

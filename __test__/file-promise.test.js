@@ -2,20 +2,20 @@
 jest.mock('fs');
 
 const faker = require('faker');
-const files = require('../../lib/file-promise.js');
+const files = require('../lib/file-promise.js');
 
 describe('File handler', ()=>{
-  it('properly writes an object to a file',  () =>{
+  it('properly writes an object to a file', () =>{
     let obj = {foo:'bar'};
     return files.write('test.json', obj)
-    .then(success=> {
-      expect(success).toBeTruthy();
-      return files.read('test.json');
+      .then(success=> {
+        expect(success).toBeTruthy();
+        return files.read('test.json');
 
-    })
-    .then(json => {
-      expect(json.foo).toEqual('bar');
-    });
+      })
+      .then(json => {
+        expect(json.foo).toEqual('bar');
+      });
   });
 
 
@@ -32,7 +32,7 @@ describe('File handler', ()=>{
       });
   });
 
-  it('fails properly, given invalid JSON',  () => {
+  it('fails properly, given invalid JSON', () => {
     let obj = 'test';
     return files.write('test.json', obj)
       .then(success => {
