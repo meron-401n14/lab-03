@@ -4,7 +4,6 @@
 
 module.exports = exports = {};
 let Contents = {};
-
 exports.readFile = (file, cb) => {
   if (file.match(/bad/i)) {
     cb('Invalid File');
@@ -12,13 +11,14 @@ exports.readFile = (file, cb) => {
     cb(undefind, new Buffer('File Contents'));
   }
 };
-
 exports.writeFile = (file, buffer, cb)=> {
   if(file.match(/bad/i)){
     cb('Invalid File');
   } else {
-    let  fileContents = buffer;
+    let fileContents = buffer;
     // eslint-disable-next-line no-undef
     cb(fileContents, true);
   }
 };
+
+

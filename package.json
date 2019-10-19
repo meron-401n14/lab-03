@@ -19,7 +19,8 @@
     "faker": "^4.1.0",
     "fs": "0.0.1-security",
     "init": "^0.1.2",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "util": "^0.12.1"
   },
   "devDependencies": {},
   "repository": {

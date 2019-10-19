@@ -4,6 +4,8 @@ const fsCallback = require("./lib/files-callBack.js");
 const fsPromise = require("./lib/file-promise.js"), write = require("./lib/write");
 const file = process.argv.slice(2)[0];
 
+
+
 /** this is just a function to run 
  * callBack with two parameters */
 
@@ -86,6 +88,8 @@ const useAsync = async () => {
   let after = await fsPromise.read(file);
   return after;
 };
+  
+
 /**
  * to call functions using promise 
  * async .then
