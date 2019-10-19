@@ -19,6 +19,6 @@ exports.writeFile = (file, buffer, cb)=> {
   } else {
     let  fileContents = buffer;
     // eslint-disable-next-line no-undef
-    cb(undefind, true);
+    cb(fileContents, true);
   }
 };

@@ -10,7 +10,7 @@
 
 
 #### Documentation
-* [jsdoc]
+* [jsdoc] only write doc in index and each module
 
 
 ### Modules
@@ -25,8 +25,8 @@
   
 #### Tests
 * npm test
-* What assertions were made? *
-* What assertions need to be / should be made?
+* What assertions were made? * writes an object to a file,  write properly to a json file & given invalid json
+* What assertions need to be / all
 
 #### UML
 * ![lab-03](async.jpg)

@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 'use strict';
 jest.mock('fs');
 
+// eslint-disable-next-line no-unused-vars
 const faker = require('faker');
 const files = require('../lib/file-promise.js');
 
@@ -10,11 +12,14 @@ describe('File handler', ()=>{
     return files.write('test.json', obj)
       .then(success=> {
         expect(success).toBeTruthy();
-        return files.read('test.json');
+        return files.read('test');
 
       })
       .then(json => {
         expect(json.foo).toEqual('bar');
+      })
+      .catch(e => {
+        expect(e).toBeDefined();
       });
   });
 
@@ -29,6 +34,9 @@ describe('File handler', ()=>{
       })
       .then (json => {
         expect(json.foo).toEqual('bar');
+      })
+      .catch(e => {
+        expect(e).toBeDefined();
       });
   });
 
