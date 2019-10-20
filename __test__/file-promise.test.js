@@ -15,11 +15,7 @@ describe('File handler', ()=>{
         // return files.read('test');
 
       });
-      // .then(json => {
-      //   expect(json.foo).toEqual('bar');
-      // });
-      
-      
+
   });
 
 
