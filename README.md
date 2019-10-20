@@ -6,7 +6,7 @@
 
 ### Links and Resources
 * [submission PR](https://github.com/meron-401n14/lab-03/pull/1)
-* [travis](https://www.travis-ci.com/meron-401n14/lab-03/builds/131636247)
+* [travis](https://www.travis-ci.com/meron-401n14/lab-03)
 
 
 #### Documentation
