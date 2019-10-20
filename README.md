@@ -16,8 +16,8 @@
 ### Modules
 #### file-promise.js; file-Async.js; files-callBack.js
 ##### Exported Values and Methods
- * fs.readFile 
- * fs.writeFile
+ * read 
+ * write
 
 #### Running the app
 * node index.js ./data/person.json
