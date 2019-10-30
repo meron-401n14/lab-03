@@ -22,24 +22,27 @@ describe('File handler module', ()=>{
   it ('properly writes a JSON string to file', () => {
     let obj = {foo: 'bar'};
     let str = JSON.stringify(obj);
-    return files.write('test.json', str)
+    files.write('test.json', str)
       .then(success => {
-        expect(success).toBeTruthy();
-        return files.read('test.json');
+        expect(success).toBeDefined();
+        files.read('File Contents');
       })
       .then (json => {
-        expect(json.foo).toEqual('barS');
+        expect(json.foo).toEqual('bar');
       });
-    
   });
+
+    
 
   it('fails properly, given invalid JSON', () => {
     let obj = 'bad';
     let str = JSON.stringify(obj);
-    return files.write('bad.json', str)
+    //return 
+    files.write('bad.json', str)
       .then(failure => {
         expect(failure).toBeDefined();
-        return files.read('test.json');
+        //return 
+        files.read('test.json');
       })
       .then(json => {
         expect(json.obj).toEqual('bad');
