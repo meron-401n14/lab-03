@@ -2,8 +2,6 @@
 /* eslint-disable no-undef */
 'use strict';
 
-module.exports = exports = {};
-let Contents = {};
 exports.readFile = (file, cb) => {
   if (file.match(/bad/i)) {
     cb('Invalid File');
@@ -20,5 +18,8 @@ exports.writeFile = (file, buffer, cb)=> {
     cb(undefined, fileContents);
   }
 };
+
+
+
 
 

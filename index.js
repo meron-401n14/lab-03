@@ -1,7 +1,15 @@
 'use strict';
 
-const fsCallback = require("./lib/files-callBack.js");
-const fsPromise = require("./lib/file-promise.js"), write = require("./lib/write");
+const fsCallback = require('./lib/files-callBack.js');
+const fsPromise = require('./lib/file-promise.js');
+const write = require('./lib/write');
+//const read = require('./lib/file-promise.js');
+//const read = require('./lib/file-promise.js');
+ 
+
+//const fsAsync = require("./lib/file-Async.js")
+//write = require('./lib/write');
+
 const file = process.argv.slice(2)[0];
 
 
@@ -10,7 +18,7 @@ const file = process.argv.slice(2)[0];
  * callBack with two parameters */
 
 function myTestcallBack(err, data) {
-  console.log("hi!")
+  console.log('hi!');
 }
 /**use callBack read write read
  * read l
@@ -30,19 +38,19 @@ const useCallbacks = cb => {
     if (err) {
       console.error(err);
     } else
-      data.lastName = "Callback";
+      data.lastName = 'Callback';
     fsCallback.write(file, data, (err, result) => {
       if (err) {
         console.error(err);
       } else {
         fsCallback.read(file, (err, afterData) => {
-          cb(afterData)
-        })
+          cb(afterData);
+        });
       }
 
-    })
-  })
-}
+    });
+  });
+};
 
 /** 
  * use Promise
@@ -56,15 +64,17 @@ const useCallbacks = cb => {
  * read ll
  * @param file
  */
-const usePromise = () => {
-  return fsPromise
-    .read(file)
-    .then(data => {
-      data.lastName = "promise";
-      return data;
-
+const usePromise = (file) => {
+  console.log('it is me', file);
+  return fsPromise.read(file)
+  //return fsPromise.read(file)
+  
+    .then(result => {
+      
+      result.lastName = 'promise';
+      return result ;
     })
-    .then(obj => write.write(file, obj))
+    .then(obj => fsPromise.write(file, obj))
     .then(result => fsPromise.read(file))
     .catch(err => {
       throw err;
@@ -83,8 +93,8 @@ const usePromise = () => {
 
 const useAsync = async () => {
   let before = await fsPromise.read(file);
-  before.lastName = "Async";
-  await write.write(file, before);
+  before.lastName = 'Async';
+  await fsPromise.write(file, before);
   let after = await fsPromise.read(file);
   return after;
 };
@@ -96,19 +106,16 @@ const useAsync = async () => {
  * callBack .then
  * whole is promise 
  */
-usePromise(myTestcallBack)
+usePromise(file)
   .then(obj => {
-    console.log("Promise:", obj);
+    console.log('Promise!:', obj);
     return useAsync();
   })
 
   .then(obj => {
-    console.log("Async:", obj);
-    useCallbacks(obj => console.log("CB", obj));
+    console.log('Async:', obj);
+    useCallbacks(obj => console.log('CB', obj));
   })
-  .catch(err => console.error("ERR", err));
-
-
-
+  .catch(err => console.error('ERR', err));
 
 

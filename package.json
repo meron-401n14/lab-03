@@ -1,4 +1,4 @@
-{
+{ 
   "name": "file-reader",
   "version": "1.0.0",
   "description": "## Async",
@@ -6,7 +6,9 @@
   "directories": {
     "lib": "lib"
   },
+
   "scripts": {
+    "start":"node index.js ./data/person.json",
     "lint": "eslint **/*.js",
     "test": "jest --coverage --verbose",
     "test-watch": "jest --watchAll --coverage --verbose"
