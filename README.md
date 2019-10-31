@@ -25,7 +25,8 @@
   
 #### Tests
 * npm test
-* What assertions were made? * writes an object to a file,  write properly to a json file & given invalid json
+* What assertions were made? * properly writes an object to a file,  
+* properly writes a JSON string to file & fails if, given invalid JSON
 * What assertions need to be / all
 
 #### UML
