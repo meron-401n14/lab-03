@@ -2,36 +2,18 @@
 
 const fsCallback = require('./lib/files-callBack.js');
 const fsPromise = require('./lib/file-promise.js');
-const write = require('./lib/write');
-//const read = require('./lib/file-promise.js');
-//const read = require('./lib/file-promise.js');
- 
-
-//const fsAsync = require("./lib/file-Async.js")
-//write = require('./lib/write');
 
 const file = process.argv.slice(2)[0];
 
-
-
-/** this is just a function to run 
- * callBack with two parameters */
-
-function myTestcallBack(err, data) {
-  console.log('hi!');
-}
-/**use callBack read write read
- * read l
+/**
+ * read data two times before and after change , throw err if there is  an error 
  * @param file
  * @param callBack
- * write
- * change data field value 
+ * write or change data field value
  * @param file
  * @param data
  * @param callBack
- * read ll
- * @param file
- * @param callBack
+ * if error throw err
  */
 const useCallbacks = cb => {
   fsCallback.read(file, (err, data) => {
@@ -51,12 +33,12 @@ const useCallbacks = cb => {
     });
   });
 };
-
+ 
 /** 
- * use Promise
- *  read l
+ * do the same process using Promise function 
+ * read file two times before and after change
  * @param file
- * change data field value
+
  * @return data
  * write
  * @param file
@@ -65,9 +47,7 @@ const useCallbacks = cb => {
  * @param file
  */
 const usePromise = (file) => {
-  console.log('it is me', file);
   return fsPromise.read(file)
-  //return fsPromise.read(file)
   
     .then(result => {
       
@@ -80,17 +60,13 @@ const usePromise = (file) => {
       throw err;
     });
 };
-
 /**
- * use async
- * read write read
- * @param  file read l
- * @param file and
- * @param before to write to object field value
- * @param file readll
- * 
+ * use async function an do same process , read two times before and after change 
+ * write to file 
+ * @param  file  read
+ * @param file  write 
+ * @param before write return updated file 
  */
-
 const useAsync = async () => {
   let before = await fsPromise.read(file);
   before.lastName = 'Async';
@@ -98,13 +74,10 @@ const useAsync = async () => {
   let after = await fsPromise.read(file);
   return after;
 };
-  
+ 
 
 /**
- * to call functions using promise 
- * async .then
- * callBack .then
- * whole is promise 
+ * here call all functions to run
  */
 usePromise(file)
   .then(obj => {
@@ -117,5 +90,20 @@ usePromise(file)
     useCallbacks(obj => console.log('CB', obj));
   })
   .catch(err => console.error('ERR', err));
+
+
+  
+
+ 
+
+
+
+
+
+
+
+
+  
+
 
 
