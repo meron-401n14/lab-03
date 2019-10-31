@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
+
 'use strict';
 module.exports = exports = {};
 let Contents = {};

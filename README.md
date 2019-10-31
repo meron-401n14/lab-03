@@ -10,7 +10,7 @@
 
 
 #### Documentation
-* [jsdoc] only write doc in index and each module
+* [jsdoc] comments written
 
 
 ### Modules
@@ -20,14 +20,14 @@
  * write
 
 #### Running the app
-* node index.js ./data/person.json
+* npm start
 
   
 #### Tests
 * npm test
 * What assertions were made? * properly writes an object to a file,  
 * properly writes a JSON string to file & fails if, given invalid JSON
-* What assertions need to be / all
+* What assertions need to be / all written once 
 
 #### UML
 * ![lab-03](async.jpg)
